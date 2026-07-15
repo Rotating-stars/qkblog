@@ -4,15 +4,124 @@
         <title>代码</title>
         <link>https://rotating-stars.github.io/qkblog/qkblog/</link>
         <description></description>
-        <lastBuildDate>Wed, 15 Jul 2026 20:36:14 GMT</lastBuildDate>
+        <lastBuildDate>Wed, 15 Jul 2026 20:42:15 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <copyright>版权所有 © 2026-7-13 --&gt; 今日 青空, 代码</copyright>
         <item>
+            <link>https://rotating-stars.github.io/qkblog//qkblog/友链/</link>
+            <guid isPermaLink="false">https://rotating-stars.github.io/qkblog//qkblog/友链/</guid>
+            <pubDate>Wed, 15 Jul 2026 20:37:25 GMT</pubDate>
+            <description><![CDATA[&lt;script setup
+import {
+	VPTeamPage,
+	VPTeamPageTitle,
+	VPTeamMembers,
+	VPTeamPageSection
+} from ']]></description>
+            <content:encoded><![CDATA[<VPTeamPageTitle>
+  <template #title>友链</template>
+</VPTeamPageTitle>
+<VPTeamMembers size="medium" :members="coreMembers" />
+<div style="margin-top: 40px;"></div>
+<VPTeamPageSection>
+	<template #title>交换友链</template>
+	<template #lead></template>
+</VPTeamPageSection>
+<div style="max-width: 200px; margin: 0 auto; margin-top: 20px;">
+	<el-button type="primary" :icon="Share" style="width: 200px; height: 50px; font-size: 16px"
+		onclick="window.location.href='添加友链.html'">点击这里</el-button>
+</div>]]></content:encoded>
+        </item>
+        <item>
+            <link>https://rotating-stars.github.io/qkblog//qkblog/友链/添加友链.html</link>
+            <guid isPermaLink="false">https://rotating-stars.github.io/qkblog//qkblog/友链/添加友链.html</guid>
+            <pubDate>Wed, 15 Jul 2026 20:37:25 GMT</pubDate>
+            <description><![CDATA[&lt;script setup
+import {
+	VPTeamPage,
+	VPTeamPageTitle,
+	VPTeamMembers,
+	VPTeamPageSection
+} from ']]></description>
+            <content:encoded><![CDATA[<VPTeamPageSection>
+	<template #title>交换友链</template>
+	<template #lead>请将以下信息的json（脚本复制）发送邮件给我（右上角邮箱标志）<br>若无头像链接请带附件（不大于256*256的jpg文件）</template>
+    <template #members>
+      <VPTeamMembers size="small" :members="partners" />
+    </template>
+</VPTeamPageSection>
+<el-card shadow="hover" style="max-width: 800px; margin: 0 auto; margin-top: 20px; margin-bottom: 20px;">
+	<template #header>
+    	<div class="card-header">
+    		<span>友链信息填写器</span>
+    	</div>
+	</template>
+  	<el-form
+  	  	ref="formRef"
+  	  	:model="formDate"
+  	  	:rules="rules"
+  	  	label-position="right"
+  	  	label-width="130px"
+	>
+		<el-form-item label="头像链接：" prop="">
+  	  	  <el-input v-model="formDate.avatar" placeholder="或者你直接邮箱发图给我"/>
+  	  	</el-form-item>
+  	  	<el-form-item label="昵称：" prop="name">
+  	  	  <el-input v-model="formDate.name" placeholder="示例：青空"/>
+  	  	</el-form-item>
+		<el-form-item label="标签：" prop="">
+  	  	  <el-input v-model="formDate.title" placeholder="示例：本站作者"/>
+  	  	</el-form-item>
+		<el-form-item label="友站名称：" prop="org">
+  	  	  <el-input v-model="formDate.org" placeholder="示例：青空的Blog"/>
+  	  	</el-form-item>
+		<el-form-item label="友站链接：" prop="orgLink">
+  	  	  <el-input v-model="formDate.orgLink" placeholder="示例：https://github.com/Rotating-stars"/>
+  	  	</el-form-item>
+		<el-form-item label="介绍：" prop="">
+  	  	  <el-input v-model="formDate.desc" placeholder="示例：谨以此书纪念我的童年，那是一段小有遗憾的幸福时光。"/>
+  	  	</el-form-item>
+		<el-form-item label="社交链接：" prop="links">
+      		<el-checkbox-group v-model="formDate.links">
+        		<el-checkbox v-for="i in linksOptions" :value="i" name="type">{{i.name}}</el-checkbox>
+      		</el-checkbox-group>
+    	</el-form-item>
+		<el-form-item v-for="(i, index) in formDate.links"
+			:label="i.icon+'：'" :prop="'links.'+index+'.link'" :rules="[{ required: true, message: '请输入链接', trigger: 'blur' }]">
+  	  		<el-input v-model="i.link" :placeholder="i.name+'链接'"/>
+  	  	</el-form-item>
+  	</el-form>
+  	<template #footer>
+		<el-button type="primary" @click="copyBatString()">点击复制</el-button>
+		<el-button @click="resetForm()">重置</el-button>
+  	</template>
+</el-card>
+]]></content:encoded>
+        </item>
+        <item>
+            <link>https://rotating-stars.github.io/qkblog//qkblog/妙妙工具.html</link>
+            <guid isPermaLink="false">https://rotating-stars.github.io/qkblog//qkblog/妙妙工具.html</guid>
+            <pubDate>Wed, 15 Jul 2026 20:37:25 GMT</pubDate>
+            <description><![CDATA[&lt;style src="/.vitepress/theme/style/nav.css"
+&lt;script setup&gt;
+import { NAV_DATA } from '/.vit]]></description>
+            <content:encoded><![CDATA[<MNavLinks v-for="{title, items} in NAV_DATA" :title="title" :items="items"/>]]></content:encoded>
+        </item>
+        <item>
+            <title><![CDATA[VitePress]]></title>
+            <link>https://rotating-stars.github.io/qkblog//qkblog/知识库/VitePress/</link>
+            <guid isPermaLink="false">https://rotating-stars.github.io/qkblog//qkblog/知识库/VitePress/</guid>
+            <pubDate>Wed, 15 Jul 2026 20:37:25 GMT</pubDate>
+            <description><![CDATA[1]]></description>
+            <content:encoded><![CDATA[<p>1</p>
+]]></content:encoded>
+        </item>
+        <item>
             <title><![CDATA[从零开始安装VitePress]]></title>
             <link>https://rotating-stars.github.io/qkblog//qkblog/知识库/VitePress/从零开始安装VitePress.html</link>
             <guid isPermaLink="false">https://rotating-stars.github.io/qkblog//qkblog/知识库/VitePress/从零开始安装VitePress.html</guid>
-            <pubDate>Wed, 15 Jul 2026 19:47:57 GMT</pubDate>
+            <pubDate>Wed, 15 Jul 2026 20:37:25 GMT</pubDate>
             <description><![CDATA[前期工作
 - Node.js 22 及以上版本。我使用的是`24.18.0LTS`版本
 - 安装命令行`CLI`工具并进行换源。我使用的是`pnpm`淘宝源
@@ -287,7 +396,7 @@ vite.config.ts.timestamp-*
             <title><![CDATA[在VitePress中使用ElementPlus]]></title>
             <link>https://rotating-stars.github.io/qkblog//qkblog/知识库/VitePress/在VitePress中使用ElementPlus.html</link>
             <guid isPermaLink="false">https://rotating-stars.github.io/qkblog//qkblog/知识库/VitePress/在VitePress中使用ElementPlus.html</guid>
-            <pubDate>Wed, 15 Jul 2026 17:11:23 GMT</pubDate>
+            <pubDate>Wed, 15 Jul 2026 20:37:25 GMT</pubDate>
             <description><![CDATA[安装ElementPlus
  导入代码]]></description>
             <content:encoded><![CDATA[<h1 id="在vitepress中使用elementplus" tabindex="-1">在VitePress中使用ElementPlus <a class="header-anchor" href="#在vitepress中使用elementplus" aria-label="Permalink to “在VitePress中使用ElementPlus”">&#8203;</a></h1>
@@ -298,139 +407,30 @@ vite.config.ts.timestamp-*
         <item>
             <link>https://rotating-stars.github.io/qkblog//qkblog/知识库/VitePress/基本配置.html</link>
             <guid isPermaLink="false">https://rotating-stars.github.io/qkblog//qkblog/知识库/VitePress/基本配置.html</guid>
-            <pubDate>Wed, 15 Jul 2026 17:10:31 GMT</pubDate>
-        </item>
-        <item>
-            <link>https://rotating-stars.github.io/qkblog//qkblog/妙妙工具.html</link>
-            <guid isPermaLink="false">https://rotating-stars.github.io/qkblog//qkblog/妙妙工具.html</guid>
-            <pubDate>Wed, 15 Jul 2026 17:03:37 GMT</pubDate>
-            <description><![CDATA[&lt;style src="/.vitepress/theme/style/nav.css"
-&lt;script setup&gt;
-import { NAV_DATA } from '/.vit]]></description>
-            <content:encoded><![CDATA[<MNavLinks v-for="{title, items} in NAV_DATA" :title="title" :items="items"/>]]></content:encoded>
-        </item>
-        <item>
-            <link>https://rotating-stars.github.io/qkblog//qkblog/知识库/Vue3/node.js下载和源配置.html</link>
-            <guid isPermaLink="false">https://rotating-stars.github.io/qkblog//qkblog/知识库/Vue3/node.js下载和源配置.html</guid>
-            <pubDate>Wed, 15 Jul 2026 17:03:04 GMT</pubDate>
+            <pubDate>Wed, 15 Jul 2026 20:37:25 GMT</pubDate>
         </item>
         <item>
             <link>https://rotating-stars.github.io/qkblog//qkblog/知识库/VitePress/自动侧边栏.html</link>
             <guid isPermaLink="false">https://rotating-stars.github.io/qkblog//qkblog/知识库/VitePress/自动侧边栏.html</guid>
-            <pubDate>Wed, 15 Jul 2026 17:02:57 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[VitePress]]></title>
-            <link>https://rotating-stars.github.io/qkblog//qkblog/知识库/VitePress/</link>
-            <guid isPermaLink="false">https://rotating-stars.github.io/qkblog//qkblog/知识库/VitePress/</guid>
-            <pubDate>Wed, 15 Jul 2026 16:07:45 GMT</pubDate>
-            <description><![CDATA[1]]></description>
-            <content:encoded><![CDATA[<p>1</p>
-]]></content:encoded>
-        </item>
-        <item>
-            <link>https://rotating-stars.github.io/qkblog//qkblog/友链/添加友链.html</link>
-            <guid isPermaLink="false">https://rotating-stars.github.io/qkblog//qkblog/友链/添加友链.html</guid>
-            <pubDate>Wed, 15 Jul 2026 16:06:58 GMT</pubDate>
-            <description><![CDATA[&lt;script setup
-import {
-	VPTeamPage,
-	VPTeamPageTitle,
-	VPTeamMembers,
-	VPTeamPageSection
-} from ']]></description>
-            <content:encoded><![CDATA[<VPTeamPageSection>
-	<template #title>交换友链</template>
-	<template #lead>请将以下信息的json（脚本复制）发送邮件给我（右上角邮箱标志）<br>若无头像链接请带附件（不大于256*256的jpg文件）</template>
-    <template #members>
-      <VPTeamMembers size="small" :members="partners" />
-    </template>
-</VPTeamPageSection>
-<el-card shadow="hover" style="max-width: 800px; margin: 0 auto; margin-top: 20px; margin-bottom: 20px;">
-	<template #header>
-    	<div class="card-header">
-    		<span>友链信息填写器</span>
-    	</div>
-	</template>
-  	<el-form
-  	  	ref="formRef"
-  	  	:model="formDate"
-  	  	:rules="rules"
-  	  	label-position="right"
-  	  	label-width="130px"
-	>
-		<el-form-item label="头像链接：" prop="">
-  	  	  <el-input v-model="formDate.avatar" placeholder="或者你直接邮箱发图给我"/>
-  	  	</el-form-item>
-  	  	<el-form-item label="昵称：" prop="name">
-  	  	  <el-input v-model="formDate.name" placeholder="示例：青空"/>
-  	  	</el-form-item>
-		<el-form-item label="标签：" prop="">
-  	  	  <el-input v-model="formDate.title" placeholder="示例：本站作者"/>
-  	  	</el-form-item>
-		<el-form-item label="友站名称：" prop="org">
-  	  	  <el-input v-model="formDate.org" placeholder="示例：青空的Blog"/>
-  	  	</el-form-item>
-		<el-form-item label="友站链接：" prop="orgLink">
-  	  	  <el-input v-model="formDate.orgLink" placeholder="示例：https://github.com/Rotating-stars"/>
-  	  	</el-form-item>
-		<el-form-item label="介绍：" prop="">
-  	  	  <el-input v-model="formDate.desc" placeholder="示例：谨以此书纪念我的童年，那是一段小有遗憾的幸福时光。"/>
-  	  	</el-form-item>
-		<el-form-item label="社交链接：" prop="links">
-      		<el-checkbox-group v-model="formDate.links">
-        		<el-checkbox v-for="i in linksOptions" :value="i" name="type">{{i.name}}</el-checkbox>
-      		</el-checkbox-group>
-    	</el-form-item>
-		<el-form-item v-for="(i, index) in formDate.links"
-			:label="i.icon+'：'" :prop="'links.'+index+'.link'" :rules="[{ required: true, message: '请输入链接', trigger: 'blur' }]">
-  	  		<el-input v-model="i.link" :placeholder="i.name+'链接'"/>
-  	  	</el-form-item>
-  	</el-form>
-  	<template #footer>
-		<el-button type="primary" @click="copyBatString()">点击复制</el-button>
-		<el-button @click="resetForm()">重置</el-button>
-  	</template>
-</el-card>
-]]></content:encoded>
+            <pubDate>Wed, 15 Jul 2026 20:37:25 GMT</pubDate>
         </item>
         <item>
             <link>https://rotating-stars.github.io/qkblog//qkblog/知识库/Vue3/</link>
             <guid isPermaLink="false">https://rotating-stars.github.io/qkblog//qkblog/知识库/Vue3/</guid>
-            <pubDate>Wed, 15 Jul 2026 02:38:46 GMT</pubDate>
+            <pubDate>Wed, 15 Jul 2026 20:37:25 GMT</pubDate>
+        </item>
+        <item>
+            <link>https://rotating-stars.github.io/qkblog//qkblog/知识库/Vue3/node.js下载和源配置.html</link>
+            <guid isPermaLink="false">https://rotating-stars.github.io/qkblog//qkblog/知识库/Vue3/node.js下载和源配置.html</guid>
+            <pubDate>Wed, 15 Jul 2026 20:37:25 GMT</pubDate>
         </item>
         <item>
             <link>https://rotating-stars.github.io/qkblog//qkblog/知识库/</link>
             <guid isPermaLink="false">https://rotating-stars.github.io/qkblog//qkblog/知识库/</guid>
-            <pubDate>Mon, 13 Jul 2026 23:43:30 GMT</pubDate>
+            <pubDate>Wed, 15 Jul 2026 20:37:25 GMT</pubDate>
             <description><![CDATA[1]]></description>
             <content:encoded><![CDATA[<p>1</p>
 ]]></content:encoded>
-        </item>
-        <item>
-            <link>https://rotating-stars.github.io/qkblog//qkblog/友链/</link>
-            <guid isPermaLink="false">https://rotating-stars.github.io/qkblog//qkblog/友链/</guid>
-            <pubDate>Mon, 13 Jul 2026 20:32:02 GMT</pubDate>
-            <description><![CDATA[&lt;script setup
-import {
-	VPTeamPage,
-	VPTeamPageTitle,
-	VPTeamMembers,
-	VPTeamPageSection
-} from ']]></description>
-            <content:encoded><![CDATA[<VPTeamPageTitle>
-  <template #title>友链</template>
-</VPTeamPageTitle>
-<VPTeamMembers size="medium" :members="coreMembers" />
-<div style="margin-top: 40px;"></div>
-<VPTeamPageSection>
-	<template #title>交换友链</template>
-	<template #lead></template>
-</VPTeamPageSection>
-<div style="max-width: 200px; margin: 0 auto; margin-top: 20px;">
-	<el-button type="primary" :icon="Share" style="width: 200px; height: 50px; font-size: 16px"
-		onclick="window.location.href='添加友链.html'">点击这里</el-button>
-</div>]]></content:encoded>
         </item>
     </channel>
 </rss>

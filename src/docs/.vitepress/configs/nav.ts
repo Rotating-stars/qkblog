@@ -30,5 +30,5 @@ export const socialLinks: DefaultTheme.Config['socialLinks'] =
 [
 	{ icon: 'maildotru', link: 'mailto:1694800621@qq.com' },
 	{ icon: 'bilibili', link: 'https://space.bilibili.com/293751618' },
-	{ icon: 'github', link: 'https://github.com/Rotating-stars/ygo-md-link' },
+	{ icon: 'github', link: 'https://rotating-stars.github.io/qkblog/' },
 ]
