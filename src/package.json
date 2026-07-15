@@ -1,0 +1,29 @@
+{
+  "devDependencies": {
+    "@mdit-vue/shared": "^3.0.2",
+    "@types/dom-view-transitions": "^1.0.6",
+    "@types/node": "^26.1.1",
+    "fast-glob": "^3.3.3",
+    "gray-matter": "^4.0.3",
+    "medium-zoom": "^1.1.0",
+    "unplugin-auto-import": "^21.0.0",
+    "unplugin-vue-components": "^32.1.0",
+    "vitepress": "2.0.0-alpha.17",
+    "vitepress-plugin-group-icons": "^1.7.5",
+    "vitepress-plugin-lightbox": "^1.0.3",
+    "vitepress-sidebar": "^1.36.1",
+    "vue": "^3.5.39"
+  },
+  "scripts": {
+    "dev": "vitepress dev docs --port 5333",
+    "bu": "vitepress build docs",
+    "build": "vitepress build docs --outDir ./../docs",
+    "pre": "vitepress preview docs"
+  },
+  "dependencies": {
+    "@element-plus/icons-vue": "^2.3.2",
+    "element-plus": "^2.14.1",
+    "vitepress-component-medium-zoom": "^1.1.1",
+    "vitepress-plugin-rss": "^0.4.4"
+  }
+}

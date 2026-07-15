@@ -1,0 +1,16 @@
+/* style/index.css */
+@import './var.css';
+@import './blur.css';
+@import './hidden.css';
+@import './marker.css';
+@import './link.css';
+@import './color.css';
+@import './css-vars.css';
+@import './badge.css';
+.vp-doc a {
+    text-decoration: none;
+}
+
+.vp-doc h1 {
+    color: #F5A0B0;
+}

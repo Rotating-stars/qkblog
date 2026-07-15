@@ -1,0 +1,27 @@
+/* custom-theme.css */
+
+:root {
+  /* 亮色模式 - 颜色稍微加深，提高可见度 */
+  --vp-c-indigo-1: #F5A0B0;      /* 主要品牌色 - 加深粉红，确保文字可读 */
+  --vp-c-indigo-2: #F08A9D;      /* 悬停状态 */
+  --vp-c-indigo-3: #F9B0BD;      /* 背景色 */
+  --vp-c-indigo-soft: rgba(232, 117, 138, 0.12); /* 柔和背景 - 略微降低透明度 */
+  
+  --vp-home-hero-name-color: #F5A0B0;
+  --vp-code-tab-active-bar-color: #F5A0B0;
+  --vp-local-search-highlight-bg: #F5A0B0;
+  --vp-local-search-highlight-text: #ffffff;
+}
+
+.dark {
+  /* 暗色模式 - 颜色调暗，避免过亮刺眼 */
+  --vp-c-indigo-1: #F5A0B0;      /* 主要品牌色 - 柔和的粉红，不刺眼 */
+  --vp-c-indigo-2: #F5A0B0;      /* 悬停状态 */
+  --vp-c-indigo-3: #E8758A;      /* 背景色 - 较深，与暗色背景协调 */
+  --vp-c-indigo-soft: rgba(245, 160, 176, 0.12); /* 柔和背景 */
+  
+  --vp-home-hero-name-color: #F5A0B0;
+  --vp-code-tab-active-bar-color: #F5A0B0;
+  --vp-local-search-highlight-bg: #F5A0B0;
+  --vp-local-search-highlight-text: #1b1b1f;
+}
