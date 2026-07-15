@@ -1,0 +1,436 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+    <channel>
+        <title>代码</title>
+        <link>http://http://localhost:4173/qkblog/</link>
+        <description></description>
+        <lastBuildDate>Wed, 15 Jul 2026 19:48:14 GMT</lastBuildDate>
+        <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
+        <generator>https://github.com/jpmonette/feed</generator>
+        <copyright>版权所有 © 2026-7-13 --&gt; 今日 青空, 代码</copyright>
+        <item>
+            <title><![CDATA[从零开始安装VitePress]]></title>
+            <link>http://http://localhost:4173//qkblog/知识库/VitePress/从零开始安装VitePress.html</link>
+            <guid isPermaLink="false">http://http://localhost:4173//qkblog/知识库/VitePress/从零开始安装VitePress.html</guid>
+            <pubDate>Wed, 15 Jul 2026 19:47:57 GMT</pubDate>
+            <description><![CDATA[前期工作
+- Node.js 22 及以上版本。我使用的是`24.18.0LTS`版本
+- 安装命令行`CLI`工具并进行换源。我使用的是`pnpm`淘宝源
+- Markdown 语法编辑器
+- Vs]]></description>
+            <content:encoded><![CDATA[<h1 id="从零开始安装vitepress" tabindex="-1">从零开始安装VitePress <a class="header-anchor" href="#从零开始安装vitepress" aria-label="Permalink to “从零开始安装VitePress”">&#8203;</a></h1>
+<ArticleMetadata /><h2 id="前期工作" tabindex="-1">前期工作 <a class="header-anchor" href="#前期工作" aria-label="Permalink to “前期工作”">&#8203;</a></h2>
+<ul>
+<li><a href="https://nodejs.org/zh-cn/download" target="_blank" rel="noreferrer">Node.js</a> 22 及以上版本。我使用的是<code>24.18.0LTS</code>版本</li>
+<li>安装命令行<code>CLI</code>工具并进行换源。我使用的是<code>pnpm</code>淘宝源</li>
+<li>Markdown 语法编辑器</li>
+<li>VsCode，Git</li>
+</ul>
+<h2 id="安装" tabindex="-1">安装 <a class="header-anchor" href="#安装" aria-label="Permalink to “安装”">&#8203;</a></h2>
+<p><code>VitePress</code>可以单独使用，也可以安装到现有项目中。</p>
+<p>在这两种情况下，都可以使用以下方式安装它：</p>
+<table><tbody><tr><td>pnpm</td><td><div class="language-shell"><button title="Copy Code" class="copy"></button><span class="lang">shell</span><pre><!--::markdown-it-async::7dm09o3m3ql2kii48tgiop::--><code>pnpm add -D vitepress</code></pre>
+</div></td></tr><tr><td>npm</td><td><div class="language-shell"><button title="Copy Code" class="copy"></button><span class="lang">shell</span><pre><!--::markdown-it-async::7tvcfk3e4q3zmah4p00ygd::--><code>npm i -D vitepress</code></pre>
+</div></td></tr><tr><td>yarn</td><td><div class="language-shell"><button title="Copy Code" class="copy"></button><span class="lang">shell</span><pre><!--::markdown-it-async::gr75nsr9m7pcw91ykn77::--><code>yarn add -D vitepress</code></pre>
+</div></td></tr><tr><td>bun</td><td><div class="language-shell"><button title="Copy Code" class="copy"></button><span class="lang">shell</span><pre><!--::markdown-it-async::8zdb9xwsm97nlpwhs11w5::--><code>bun add -D vitepress</code></pre>
+</div></td></tr></tbody></table>
+<details  class="details custom-block"><summary>如果你遇到了esbuild报错</summary>
+<p>命令运行之后按<code>Enter</code></p>
+<table><tbody><tr><td>pnpm</td><td><div class="language-shell"><button title="Copy Code" class="copy"></button><span class="lang">shell</span><pre><!--::markdown-it-async::ww1i8ijzsiskhfeakl0qu::--><code>pnpm approve-builds</code></pre>
+</div></td></tr></tbody></table>
+</details>
+<h2 id="初始化向导" tabindex="-1">初始化向导 <a class="header-anchor" href="#初始化向导" aria-label="Permalink to “初始化向导”">&#8203;</a></h2>
+<p><code>VitePress</code>附带一个命令行设置向导，可以帮助你构建一个基本项目。</p>
+<table><tbody><tr><td>pnpm</td><td><div class="language-shell"><button title="Copy Code" class="copy"></button><span class="lang">shell</span><pre><!--::markdown-it-async::beb2sgpinyq5k06ysozia::--><code>pnpm vitepress init</code></pre>
+</div></td></tr><tr><td>npm</td><td><div class="language-shell"><button title="Copy Code" class="copy"></button><span class="lang">shell</span><pre><!--::markdown-it-async::lkg8g67leom5oeqifwwb::--><code>npx vitepress init</code></pre>
+</div></td></tr><tr><td>yarn</td><td><div class="language-shell"><button title="Copy Code" class="copy"></button><span class="lang">shell</span><pre><!--::markdown-it-async::5s5ub90fns6l6bxjqezc4r::--><code>yarn vitepress init</code></pre>
+</div></td></tr><tr><td>bun</td><td><div class="language-shell"><button title="Copy Code" class="copy"></button><span class="lang">shell</span><pre><!--::markdown-it-async::xqplfus558yc67uxh7whd::--><code>bun vitepress init</code></pre>
+</div></td></tr></tbody></table>
+<table><tbody><tr><td>中文</td><td><div class="language-shell"><button title="Copy Code" class="copy"></button><span class="lang">shell</span><pre><!--::markdown-it-async::qco6mjczezlyot0rds7s::--><code>T  欢迎使用VitePress!
+|
+o  把你的文档设置在哪个目录?
+|  ./docs
+|
+o  站点标题:
+|  My Awesome Project
+|
+o  站点描述:
+|  A VitePress Site
+|
+o  主题:
+|  Default Theme
+|
+o  使用TypeScript支持?
+|  Yes
+|
+o  在package.json中为npm添加VitePress命令?
+|  Yes
+|
+—  结束! 现在你可以运行npm run docs:dev来启动它.</code></pre>
+</div></td></tr><tr><td>官方原文</td><td><div class="language-shell"><button title="Copy Code" class="copy"></button><span class="lang">shell</span><pre><!--::markdown-it-async::laeq93omil6iijgjgajrk::--><code>T  Welcome to VitePress!
+|
+o  Where should VitePress initialize the config?
+|  ./docs
+|
+o  Site title:
+|  My Awesome Project
+|
+o  Site description:
+|  A VitePress Site
+|
+o  Theme:
+|  Default Theme
+|
+o  Use TypeScript for config and theme files?
+|  Yes
+|
+o  Add VitePress npm scripts to package.json?
+|  Yes
+|
+—  Done! Now run npm run docs:dev and start writing.</code></pre>
+</div></td></tr></tbody></table>
+<p>使用向导之后，应该运行一次<code>install</code>命令确保依赖正确安装</p>
+<table><tbody><tr><td>pnpm</td><td><div class="language-shell"><button title="Copy Code" class="copy"></button><span class="lang">shell</span><pre><!--::markdown-it-async::98rglpijvxss4tczq8f1t8::--><code>pnpm install</code></pre>
+</div></td></tr><tr><td>npm</td><td><div class="language-shell"><button title="Copy Code" class="copy"></button><span class="lang">shell</span><pre><!--::markdown-it-async::vob7wo96jihe2cz7ziwfa6::--><code>npm run install</code></pre>
+</div></td></tr><tr><td>yarn</td><td><div class="language-shell"><button title="Copy Code" class="copy"></button><span class="lang">shell</span><pre><!--::markdown-it-async::zaa9b7nciob0nfmrwgoslc::--><code>yarn run install</code></pre>
+</div></td></tr></tbody></table>
+<p>这时你的文件结构如下</p>
+<table><tbody><tr><td>explorer</td><td><div class="language-explorer"><button title="Copy Code" class="copy"></button><span class="lang">explorer</span><pre><!--::markdown-it-async::4ro8iim53ra4ad3on0wsdc::--><code>.
+|- docs
+|  |- .vitepress
+|  |  |- config.mts
+|  |  |- cache
+|  |- api-examples.md
+|  |- markdown-examples.md
+|  |- index.md
+|- package.json
+|- pnpm-lock.yaml
+|- pnpm-workspace.yaml</code></pre>
+</div></td></tr></tbody></table>
+<h2 id="快捷启动-非必须" tabindex="-1">快捷启动（非必须） <a class="header-anchor" href="#快捷启动-非必须" aria-label="Permalink to “快捷启动（非必须）”">&#8203;</a></h2>
+<p>当前我们需要运行<code>pnpm docs:dev</code>来启动<code>VitePress</code>，这显然不友好。</p>
+<p>通过修改<code>package.json</code>，我们可以简化这个操作</p>
+<table><tbody><tr><td>package.json</td><td><div class="language-json"><button title="Copy Code" class="copy"></button><span class="lang">json</span><pre><!--::markdown-it-async::vtoruwabt28rste606ocv::--><code>{
+  &quot;devDependencies&quot;: {
+    &quot;vitepress&quot;: &quot;^1.6.4&quot;
+  },
+  &quot;scripts&quot;: {
+    &quot;docs:dev&quot;: &quot;vitepress dev docs&quot;, // [!code --]
+    &quot;docs:build&quot;: &quot;vitepress build docs&quot;, // [!code --]
+    &quot;docs:preview&quot;: &quot;vitepress preview docs&quot; // [!code --]
+    &quot;dev&quot;: &quot;vitepress dev docs&quot;, // [!code ++]
+    &quot;build&quot;: &quot;vitepress build docs&quot;, // [!code ++]
+    &quot;preview&quot;: &quot;vitepress preview docs&quot; // [!code ++]
+  }
+}</code></pre>
+</div></td></tr></tbody></table>
+<p>完成之后就可以通过<code>pnpm dev</code>来快速启动<code>VitePress</code>，命令运行之后按O快速打开网页</p>
+<details  class="details custom-block"><summary>通过bat脚本快速启动（Linux使用sh脚本）</summary>
+<p>将以下命令保存为脚本即可快速完成其功能</p>
+<table><tbody><tr><td>dev.bat</td><td><div class="language-bat"><button title="Copy Code" class="copy"></button><span class="lang">bat</span><pre><!--::markdown-it-async::wzdm6nqqpgrcejh0iu6vhl::--><code>pnpm dev</code></pre>
+</div></td></tr><tr><td>build.bat</td><td><div class="language-bat"><button title="Copy Code" class="copy"></button><span class="lang">bat</span><pre><!--::markdown-it-async::qxi35qtt38m9hkymnis7w::--><code>pnpm build</code></pre>
+</div></td></tr><tr><td>preview.bat</td><td><div class="language-bat"><button title="Copy Code" class="copy"></button><span class="lang">bat</span><pre><!--::markdown-it-async::5ycl36v2q67adzpaswzj6k::--><code>pnpm preview</code></pre>
+</div></td></tr><tr><td>install.bat</td><td><div class="language-bat"><button title="Copy Code" class="copy"></button><span class="lang">bat</span><pre><!--::markdown-it-async::uiqv7puc6p2oxiznhpw4c::--><code>pnpm install</code></pre>
+</div></td></tr></tbody></table>
+</details>
+<h2 id="git忽略项" tabindex="-1">Git忽略项 <a class="header-anchor" href="#git忽略项" aria-label="Permalink to “Git忽略项”">&#8203;</a></h2>
+<p>在<code>./</code>目录下创建<code>.gitignore</code>文件，添加以下内容，作用是在使用git上传时忽略这些文件</p>
+<details  class="details custom-block"><summary>.gitignore的内容</summary>
+<table><tbody><tr><td>.gitignore</td><td><div class="language-txt"><button title="Copy Code" class="copy"></button><span class="lang">txt</span><pre><!--::markdown-it-async::7b9x1ag2daxwode3jkh1dc::--><code># Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+
+# Diagnostic reports (https://nodejs.org/api/report.html)
+report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Directory for instrumented libs generated by jscoverage/JSCover
+lib-cov
+
+# Coverage directory used by tools like istanbul
+coverage
+*.lcov
+
+# nyc test coverage
+.nyc_output
+
+# Grunt intermediate storage (https://gruntjs.com/creating-plugins#storing-task-files)
+.grunt
+
+# Bower dependency directory (https://bower.io/)
+bower_components
+
+# node-waf configuration
+.lock-wscript
+
+# Compiled binary addons (https://nodejs.org/api/addons.html)
+build/Release
+
+# Dependency directories
+node_modules/
+jspm_packages/
+
+# Snowpack dependency directory (https://snowpack.dev/)
+web_modules/
+
+# TypeScript cache
+*.tsbuildinfo
+
+# Optional npm cache directory
+.npm
+
+# Optional eslint cache
+.eslintcache
+
+# Optional stylelint cache
+.stylelintcache
+
+# Optional REPL history
+.node_repl_history
+
+# Output of &#039;npm pack&#039;
+*.tgz
+
+# Yarn Integrity file
+.yarn-integrity
+
+# dotenv environment variable files
+.env
+.env.*
+!.env.example
+
+# parcel-bundler cache (https://parceljs.org/)
+.cache
+.parcel-cache
+
+# Next.js build output
+.next
+out
+
+# Nuxt.js build / generate output
+.nuxt
+dist
+.output
+
+# Gatsby files
+.cache/
+# Comment in the public line in if your project uses Gatsby and not Next.js
+# https://nextjs.org/blog/next-9-1#public-directory-support
+# public
+
+# vuepress build output
+.vuepress/dist
+
+# vuepress v2.x temp directory
+.temp
+
+# Sveltekit cache directory
+.svelte-kit/
+
+# vitepress build output
+**/.vitepress/dist
+
+# vitepress cache directory
+**/.vitepress/cache
+
+# Docusaurus cache and generated files
+.docusaurus
+
+# Serverless directories
+.serverless/
+
+# FuseBox cache
+.fusebox/
+
+# DynamoDB Local files
+.dynamodb/
+
+# Firebase cache directory
+.firebase/
+
+# TernJS port file
+.tern-port
+
+# Stores VSCode versions used for testing VSCode extensions
+.vscode-test
+
+# pnpm
+.pnpm-store
+
+# yarn v3
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
+
+# Vite files
+vite.config.js.timestamp-*
+vite.config.ts.timestamp-*
+.vite/</code></pre>
+</div></td></tr></tbody></table>
+</details>
+]]></content:encoded>
+        </item>
+        <item>
+            <title><![CDATA[在VitePress中使用ElementPlus]]></title>
+            <link>http://http://localhost:4173//qkblog/知识库/VitePress/在VitePress中使用ElementPlus.html</link>
+            <guid isPermaLink="false">http://http://localhost:4173//qkblog/知识库/VitePress/在VitePress中使用ElementPlus.html</guid>
+            <pubDate>Wed, 15 Jul 2026 17:11:23 GMT</pubDate>
+            <description><![CDATA[安装ElementPlus
+ 导入代码]]></description>
+            <content:encoded><![CDATA[<h1 id="在vitepress中使用elementplus" tabindex="-1">在VitePress中使用ElementPlus <a class="header-anchor" href="#在vitepress中使用elementplus" aria-label="Permalink to “在VitePress中使用ElementPlus”">&#8203;</a></h1>
+<ArticleMetadata /><h2 id="安装elementplus" tabindex="-1">安装ElementPlus <a class="header-anchor" href="#安装elementplus" aria-label="Permalink to “安装ElementPlus”">&#8203;</a></h2>
+<h2 id="导入代码" tabindex="-1">导入代码 <a class="header-anchor" href="#导入代码" aria-label="Permalink to “导入代码”">&#8203;</a></h2>
+]]></content:encoded>
+        </item>
+        <item>
+            <link>http://http://localhost:4173//qkblog/知识库/VitePress/基本配置.html</link>
+            <guid isPermaLink="false">http://http://localhost:4173//qkblog/知识库/VitePress/基本配置.html</guid>
+            <pubDate>Wed, 15 Jul 2026 17:10:31 GMT</pubDate>
+        </item>
+        <item>
+            <link>http://http://localhost:4173//qkblog/妙妙工具.html</link>
+            <guid isPermaLink="false">http://http://localhost:4173//qkblog/妙妙工具.html</guid>
+            <pubDate>Wed, 15 Jul 2026 17:03:37 GMT</pubDate>
+            <description><![CDATA[&lt;style src="/.vitepress/theme/style/nav.css"
+&lt;script setup&gt;
+import { NAV_DATA } from '/.vit]]></description>
+            <content:encoded><![CDATA[<MNavLinks v-for="{title, items} in NAV_DATA" :title="title" :items="items"/>]]></content:encoded>
+        </item>
+        <item>
+            <link>http://http://localhost:4173//qkblog/知识库/Vue3/node.js下载和源配置.html</link>
+            <guid isPermaLink="false">http://http://localhost:4173//qkblog/知识库/Vue3/node.js下载和源配置.html</guid>
+            <pubDate>Wed, 15 Jul 2026 17:03:04 GMT</pubDate>
+        </item>
+        <item>
+            <link>http://http://localhost:4173//qkblog/知识库/VitePress/自动侧边栏.html</link>
+            <guid isPermaLink="false">http://http://localhost:4173//qkblog/知识库/VitePress/自动侧边栏.html</guid>
+            <pubDate>Wed, 15 Jul 2026 17:02:57 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[VitePress]]></title>
+            <link>http://http://localhost:4173//qkblog/知识库/VitePress/</link>
+            <guid isPermaLink="false">http://http://localhost:4173//qkblog/知识库/VitePress/</guid>
+            <pubDate>Wed, 15 Jul 2026 16:07:45 GMT</pubDate>
+            <description><![CDATA[1]]></description>
+            <content:encoded><![CDATA[<p>1</p>
+]]></content:encoded>
+        </item>
+        <item>
+            <link>http://http://localhost:4173//qkblog/友链/添加友链.html</link>
+            <guid isPermaLink="false">http://http://localhost:4173//qkblog/友链/添加友链.html</guid>
+            <pubDate>Wed, 15 Jul 2026 16:06:58 GMT</pubDate>
+            <description><![CDATA[&lt;script setup
+import {
+	VPTeamPage,
+	VPTeamPageTitle,
+	VPTeamMembers,
+	VPTeamPageSection
+} from ']]></description>
+            <content:encoded><![CDATA[<VPTeamPageSection>
+	<template #title>交换友链</template>
+	<template #lead>请将以下信息的json（脚本复制）发送邮件给我（右上角邮箱标志）<br>若无头像链接请带附件（不大于256*256的jpg文件）</template>
+    <template #members>
+      <VPTeamMembers size="small" :members="partners" />
+    </template>
+</VPTeamPageSection>
+<el-card shadow="hover" style="max-width: 800px; margin: 0 auto; margin-top: 20px; margin-bottom: 20px;">
+	<template #header>
+    	<div class="card-header">
+    		<span>友链信息填写器</span>
+    	</div>
+	</template>
+  	<el-form
+  	  	ref="formRef"
+  	  	:model="formDate"
+  	  	:rules="rules"
+  	  	label-position="right"
+  	  	label-width="130px"
+	>
+		<el-form-item label="头像链接：" prop="">
+  	  	  <el-input v-model="formDate.avatar" placeholder="或者你直接邮箱发图给我"/>
+  	  	</el-form-item>
+  	  	<el-form-item label="昵称：" prop="name">
+  	  	  <el-input v-model="formDate.name" placeholder="示例：青空"/>
+  	  	</el-form-item>
+		<el-form-item label="标签：" prop="">
+  	  	  <el-input v-model="formDate.title" placeholder="示例：本站作者"/>
+  	  	</el-form-item>
+		<el-form-item label="友站名称：" prop="org">
+  	  	  <el-input v-model="formDate.org" placeholder="示例：青空的Blog"/>
+  	  	</el-form-item>
+		<el-form-item label="友站链接：" prop="orgLink">
+  	  	  <el-input v-model="formDate.orgLink" placeholder="示例：https://github.com/Rotating-stars"/>
+  	  	</el-form-item>
+		<el-form-item label="介绍：" prop="">
+  	  	  <el-input v-model="formDate.desc" placeholder="示例：谨以此书纪念我的童年，那是一段小有遗憾的幸福时光。"/>
+  	  	</el-form-item>
+		<el-form-item label="社交链接：" prop="links">
+      		<el-checkbox-group v-model="formDate.links">
+        		<el-checkbox v-for="i in linksOptions" :value="i" name="type">{{i.name}}</el-checkbox>
+      		</el-checkbox-group>
+    	</el-form-item>
+		<el-form-item v-for="(i, index) in formDate.links"
+			:label="i.icon+'：'" :prop="'links.'+index+'.link'" :rules="[{ required: true, message: '请输入链接', trigger: 'blur' }]">
+  	  		<el-input v-model="i.link" :placeholder="i.name+'链接'"/>
+  	  	</el-form-item>
+  	</el-form>
+  	<template #footer>
+		<el-button type="primary" @click="copyBatString()">点击复制</el-button>
+		<el-button @click="resetForm()">重置</el-button>
+  	</template>
+</el-card>
+]]></content:encoded>
+        </item>
+        <item>
+            <link>http://http://localhost:4173//qkblog/知识库/Vue3/</link>
+            <guid isPermaLink="false">http://http://localhost:4173//qkblog/知识库/Vue3/</guid>
+            <pubDate>Wed, 15 Jul 2026 02:38:46 GMT</pubDate>
+        </item>
+        <item>
+            <link>http://http://localhost:4173//qkblog/知识库/</link>
+            <guid isPermaLink="false">http://http://localhost:4173//qkblog/知识库/</guid>
+            <pubDate>Mon, 13 Jul 2026 23:43:30 GMT</pubDate>
+            <description><![CDATA[1]]></description>
+            <content:encoded><![CDATA[<p>1</p>
+]]></content:encoded>
+        </item>
+        <item>
+            <link>http://http://localhost:4173//qkblog/友链/</link>
+            <guid isPermaLink="false">http://http://localhost:4173//qkblog/友链/</guid>
+            <pubDate>Mon, 13 Jul 2026 20:32:02 GMT</pubDate>
+            <description><![CDATA[&lt;script setup
+import {
+	VPTeamPage,
+	VPTeamPageTitle,
+	VPTeamMembers,
+	VPTeamPageSection
+} from ']]></description>
+            <content:encoded><![CDATA[<VPTeamPageTitle>
+  <template #title>友链</template>
+</VPTeamPageTitle>
+<VPTeamMembers size="medium" :members="coreMembers" />
+<div style="margin-top: 40px;"></div>
+<VPTeamPageSection>
+	<template #title>交换友链</template>
+	<template #lead></template>
+</VPTeamPageSection>
+<div style="max-width: 200px; margin: 0 auto; margin-top: 20px;">
+	<el-button type="primary" :icon="Share" style="width: 200px; height: 50px; font-size: 16px"
+		onclick="window.location.href='添加友链.html'">点击这里</el-button>
+</div>]]></content:encoded>
+        </item>
+    </channel>
+</rss>
