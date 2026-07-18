@@ -1,3 +1,4 @@
+//文件末尾配置
 export const docFooter = {
     //最后更新时间
     lastUpdated: {
@@ -14,7 +15,7 @@ export const docFooter = {
     },
     //编辑本页
     // editLink: { 
-    //   pattern: 'https://github.com/vuejs/vitepress/edit/main/docs/:path', // 改成自己的仓库
+    //   pattern: 'https://github.com/自己的仓库/:path',
     //   text: '在GitHub编辑本页'
     // },
 }

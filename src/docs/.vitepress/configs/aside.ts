@@ -1,3 +1,4 @@
+//右侧边栏配置
 export const aside = {
     //移动端返回顶部按钮的标题
 	returnToTopLabel: "回到顶部",

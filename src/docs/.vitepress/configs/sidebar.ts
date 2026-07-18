@@ -4,9 +4,9 @@ export const vitePressSidebarOptions = [
 			//这是.vitepress目录所在的路径,如果项目根目录中文档所在的文件夹是 /docs，则该选项的值应设为 docs 或 /docs。
 			documentRootPath: 'docs',
 			//扫描指定目录的文件
-			scanStartPath: 'zmxy',
+			scanStartPath: 'qkblog',
 			//为地址栏添加路径名
-			resolvePath: '/zmxy/',
+			resolvePath: '/qkblog/',
 			//显示根目录的index.md文件
 			includeRootIndexFile: true,
 			//显示子目录的index.md文件

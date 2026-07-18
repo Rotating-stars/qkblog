@@ -1,3 +1,4 @@
+//主页面配置
 export const body = {
     logo: '/logo.png', //左上角logo
     footer: {
@@ -8,7 +9,7 @@ export const body = {
         title: "当前页面未找到",
         quote: "请返回有效页面",
         linkText: "返回首页",
-    }, //404页面
+    }, //404页面自定义
     externalLinkIcon: true, //是否在markdown中的外部链接后显示↗
     sitemap: {
         hostname: 'https://rotating-stars.github.io/qkblog/',

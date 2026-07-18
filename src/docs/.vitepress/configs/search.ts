@@ -1,3 +1,4 @@
+//搜索配置
 import type { DefaultTheme } from 'vitepress'
 
 export const search: DefaultTheme.Config['search'] =

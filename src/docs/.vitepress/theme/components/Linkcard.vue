@@ -29,7 +29,10 @@ const props = withDefaults(defineProps<Props>(), {
 <style>
 /* 卡片背景 */
 .linkcard {
-    background-color: var(--vp-c-bg-soft);
+    background-color: rgba(255, 192, 203, 0.15);
+    border-color: #F5A0B0;
+    border-style: solid;
+    border-width: 1px;
     border-radius: 8px;
     padding: 8px 16px 8px 8px;
     transition: color 0.5s, background-color 0.5s;
@@ -38,7 +41,7 @@ const props = withDefaults(defineProps<Props>(), {
 
 /* 卡片鼠标悬停 */
 .linkcard:hover {
-    background-color: rgba(255, 192, 203, 0.5);
+    background-color: rgba(255, 192, 203, 0.6);
 }
 
 /* 链接样式 */

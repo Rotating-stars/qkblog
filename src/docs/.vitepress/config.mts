@@ -12,8 +12,7 @@ import { RSSOptions, RssPlugin } from 'vitepress-plugin-rss'
 //永久链接
 import { usePostsFor } from './theme/utils/permalink';
 //配置
-import { meta } from './configs/index'
-import { search, nav, darkMode, socialLinks } from './configs/index'
+import { meta, search, nav, darkMode, socialLinks } from './configs/index'
 import { body, vitePressSidebarOptions, aside, docFooter } from './configs/index'
 
 const rewrites = await usePostsFor([
@@ -69,18 +68,21 @@ const vitePressConfigs = {
 		...body,
 		//搜索相关
 		search,
-		//深色模式相关
-		...darkMode,
 		//页头导航菜单相关
 		nav,
+		//深色模式相关
+		...darkMode,
 		//右上社交链接相关
 		socialLinks,
 		//移动端左侧侧边栏菜单标题
 		sidebarMenuLabel: "目录",
 		//右侧边栏
 		...aside,
+		//文章末尾相关
 		...docFooter,
 	}
 };
 
-export default defineConfig(withSidebar(vitePressConfigs, vitePressSidebarOptions));
+export default defineConfig(
+	withSidebar(vitePressConfigs, vitePressSidebarOptions)
+);
